@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #d4a853;
+    --gold-light: #e8c97a;
+    --navy: #0f172a;
+    --navy-deep: #0b1120;
+  }
+
+  body {
+    @apply bg-navy-950 text-slate-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold-500/30 text-gold-100;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b1120;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d4a853;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e8c97a;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .glass-hover {
+    @apply transition-all duration-300;
+  }
+  .glass-hover:hover {
+    @apply bg-white/10 border-gold-500/30 shadow-gold-500/10;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #d4a853, #e8c97a, #d4a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(
+        rgba(212, 168, 83, 0.03) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(212, 168, 83, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-500 to-gold-400 text-navy-950 font-semibold
+      px-6 py-3 rounded-xl transition-all duration-300
+      shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40
+      hover:from-gold-400 hover:to-gold-300
+      active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
+      inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border border-gold-500/50 text-gold-500 font-semibold
+      px-6 py-3 rounded-xl transition-all duration-300
+      hover:bg-gold-500/10 hover:border-gold-500
+      active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
+      inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply text-slate-300 font-medium px-4 py-2 rounded-lg
+      transition-all duration-200 hover:text-gold-400 hover:bg-white/5;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3
+      text-slate-100 placeholder:text-slate-500 outline-none
+      focus:border-gold-500/50 focus:ring-2 focus:ring-gold-500/20
+      transition-all duration-200;
+  }
+
+  .card {
+    @apply glass rounded-2xl overflow-hidden glass-hover;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold text-gold-gradient;
+  }
+
+  .section-subtitle {
+    @apply text-slate-400 text-lg max-w-2xl;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold
+      bg-gold-500/10 text-gold-400 border border-gold-500/20;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}

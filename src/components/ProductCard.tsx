@@ -41,14 +41,14 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       transition={{ delay: index * 0.1, duration: 0.5 }}
     >
       <Link href={`/products/${product.id}`} className="block group">
-        <div className="card p-6 h-full flex flex-col">
-          {/* Icon Area */}
-          <div
-            className={`w-full aspect-[4/3] rounded-xl bg-gradient-to-br ${product.gradient} flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300`}
-          >
-            <div className="absolute inset-0 bg-grid opacity-30" />
-            <Icon className="w-16 h-16 text-slate-300/80 relative z-10 group-hover:scale-110 transition-transform duration-300" />
-          </div>
+       {/* Product Image */}
+<div className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-5 relative group-hover:scale-[1.02] transition-transform duration-300">
+  <img
+    src={`/products/${product.id}.jpg`}
+    alt={product.name}
+    className="w-full h-full object-cover"
+  />
+</div>
 
           {/* Category Badge */}
           <div className="badge mb-3">{product.category}</div>

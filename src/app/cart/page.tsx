@@ -18,7 +18,7 @@ import {
 import { useCart } from "@/context/CartContext";
 import { formatRupiah, createWhatsAppUrl, generateOrderId } from "@/lib/utils";
 
-const WHATSAPP_NUMBER = "6281234567890";
+const WHATSAPP_NUMBER = "6281295744373";
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, clearCart, totalPrice } =
